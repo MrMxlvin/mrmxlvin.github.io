@@ -1,48 +1,82 @@
-window.onload=()=>setTimeout(()=>loader.classList.add("hide"),2200);
+// HOUSE OF MXLVIN V2.5
 
 const loader=document.getElementById("loader");
-const reveal=document.querySelectorAll(".reveal");
 
-const obs=new IntersectionObserver(e=>{
-e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
+window.addEventListener("load",()=>{
+setTimeout(()=>{
+loader.classList.add("hide");
+},900);
+});
+
+// PARALLAX
+
+const hero=document.querySelector(".hero-image");
+
+window.addEventListener("scroll",()=>{
+hero.style.transform=`translateY(${window.scrollY*0.18}px)`;
+});
+
+// REVEAL
+
+const sections=document.querySelectorAll(".reveal");
+
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
 },{threshold:.18});
 
-reveal.forEach(s=>obs.observe(s));
+sections.forEach(section=>observer.observe(section));
 
-const hero=document.querySelector(".hero-img");
-window.addEventListener("scroll",()=>{
-hero.style.transform=`translateY(${scrollY*.18}px)`;
-});
+// GALLERY
 
 const photos=document.querySelectorAll(".photo");
-const light=document.getElementById("lightbox");
-const big=document.getElementById("big");
+const lightbox=document.getElementById("lightbox");
+const big=document.getElementById("lightbox-image");
+const close=document.getElementById("close");
 
-photos.forEach(p=>{
-p.onclick=()=>{
-light.classList.add("show");
-big.src=p.src;
-};
+photos.forEach(photo=>{
+photo.addEventListener("click",()=>{
+big.src=photo.src;
+lightbox.classList.add("show");
+});
 });
 
-light.onclick=e=>{
-if(e.target===light||e.target.id==="close"){
-light.classList.remove("show");
+close.onclick=()=>lightbox.classList.remove("show");
+
+lightbox.onclick=(e)=>{
+if(e.target===lightbox){
+lightbox.classList.remove("show");
 }
 };
+
+// VINYL
 
 const vinyl=document.getElementById("vinyl");
-let taps=0;
+const status=document.getElementById("status");
 
-vinyl.onclick=()=>{
-taps++;
-if(taps===5){
-document.getElementById("secret").innerText=
-"✨ You found the hidden track. See you at the next show.";
-taps=0;
+let playing=true;
+
+vinyl.addEventListener("click",()=>{
+
+playing=!playing;
+
+if(playing){
+vinyl.style.animationPlayState="running";
+status.textContent="Music spinning";
+}else{
+vinyl.style.animationPlayState="paused";
+status.textContent="Record paused";
 }
-};
+
+});
+
+// Pause when tab hidden
 
 document.addEventListener("visibilitychange",()=>{
-vinyl.style.animationPlayState=document.hidden?"paused":"running";
+
+vinyl.style.animationPlayState=document.hidden?"paused":(playing?"running":"paused");
+
 });
