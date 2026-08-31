@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,65 +7,53 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav class="navbar">
-
-<div class="brand">MXLVIN</div>
-
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Book</a>
+<div id="loader">
+<img src="assets/monogram.png" class="loader-logo">
+<h1>MXLVIN</h1>
 </div>
 
+<nav class="nav">
+<div class="logo">MXLVIN</div>
+<a href="#contact">BOOK</a>
 </nav>
 
 <header class="hero">
+<img src="assets/hero.jpg" class="hero-img">
 
-<img src="assets/hero.jpg" class="hero-image" alt="Mxlvin">
+<div class="overlay"></div>
 
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
-<p class="eyebrow">SINGER • SONGWRITER • PERFORMER</p>
-
+<div class="hero-text">
+<p>SINGER · SONGWRITER · PERFORMER</p>
 <h1>Mxlvin</h1>
+<h2>Create. Perform. Connect.</h2>
 
-<p class="tagline">Create. Perform. Connect.</p>
-
-<a href="#contact" class="cta">Book Mxlvin</a>
-
+<a href="#contact" class="gold-btn">Book Mxlvin</a>
 </div>
-
 </header>
 
-<section id="about" class="manifesto reveal">
+<section class="manifesto reveal">
+<img src="assets/monogram.png" class="mono">
 
-<img src="assets/monogram.png" class="mono" alt="Monogram">
+<p class="label">MANIFESTO</p>
 
-<p class="section-label">MANIFESTO</p>
-
-<blockquote>
+<h2>
 I don't just perform songs.
 <br>
 I score memories.
-</blockquote>
-
+</h2>
 </section>
 
-<section id="services" class="services reveal">
+<section class="services reveal">
+<p class="label">AVAILABLE FOR</p>
 
-<p class="section-label">AVAILABLE FOR</p>
-
-<div class="service-grid">
+<div class="grid">
 
 <div class="card">
 <h3>Birthdays</h3>
@@ -85,57 +72,73 @@ I score memories.
 
 <div class="card">
 <h3>Live Music</h3>
-<p>Cafés • Weddings • Events</p>
+<p>Events • Cafés • Weddings</p>
 </div>
 
 </div>
-
 </section>
 
-<section id="gallery" class="gallery reveal">
+<section class="gallery reveal">
+<p class="label">GALLERY</p>
 
-<p class="section-label">GALLERY</p>
+<h2>Moments on Stage</h2>
 
-<h2 class="gallery-title">Moments on Stage</h2>
+<div class="photos">
+<img src="assets/gallery1.jpg" class="photo">
+<img src="assets/gallery2.jpg" class="photo tall">
+<img src="assets/gallery3.jpg" class="photo">
+</div>
+</section>
 
-<div class="gallery-grid">
+<section class="player reveal">
+<p class="label">NOW PLAYING</p>
 
-<img src="assets/gallery1.jpg" class="gallery-item" alt="Gallery 1">
+<div class="player-card">
 
-<img src="assets/gallery2.jpg" class="gallery-item tall" alt="Gallery 2">
-
-<img src="assets/gallery3.jpg" class="gallery-item" alt="Gallery 3">
-
+<div id="vinyl" class="vinyl">
+<div class="center">
+<img src="assets/monogram.png">
+</div>
 </div>
 
+<h2>Unreleased</h2>
+<p class="artist">MXLVIN</p>
+
+<div class="line"></div>
+
+<p class="desc">
+Every performance begins with a memory.
+Every memory deserves its own soundtrack.
+</p>
+
+</div>
 </section>
 
 <footer id="contact" class="contact reveal">
 
-<p class="section-label">LET'S CREATE SOMETHING BEAUTIFUL</p>
+<p class="label">LET'S CREATE SOMETHING BEAUTIFUL</p>
 
-<a class="contact-btn whatsapp" href="https://wa.me/263778690204">
+<a href="https://wa.me/263778690204" class="btn green">
 WhatsApp
 </a>
 
-<a class="contact-btn email" href="mailto:zanzamelvin@gmail.com">
-Email
+<a href="mailto:zanzamelvin@gmail.com" class="btn dark">
+Management & Enquiries
 </a>
 
-<a class="contact-btn instagram" href="https://www.instagram.com/sir.mxlvin">
+<a href="https://www.instagram.com/sir.mxlvin" class="btn insta">
 Instagram
 </a>
 
-<p class="footer-note">See you at the next show.</p>
+<p id="secret" class="footer">
+See you at the next show.
+</p>
 
 </footer>
 
-<div id="lightbox" class="lightbox">
-
-<span class="close">&times;</span>
-
-<img id="lightbox-img" src="" alt="Expanded">
-
+<div id="lightbox">
+<span id="close">×</span>
+<img id="big">
 </div>
 
 <script src="script.js"></script>
