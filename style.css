@@ -1,1 +1,304 @@
+/* ========= MXLVIN V1.2 ========= */
 
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#060B16;
+  color:#F8FAFC;
+  overflow-x:hidden;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.navbar{
+  position:fixed;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:430px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:14px 18px;
+
+  background:rgba(8,17,31,.55);
+  backdrop-filter:blur(18px);
+
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+
+  z-index:1000;
+}
+
+.brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  color:#F5F1E8;
+}
+
+.nav-links{
+  display:flex;
+  gap:14px;
+}
+
+.nav-links a{
+  color:#CBD5E1;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+  position:relative;
+  height:100vh;
+  min-height:700px;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.hero-image{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+  to top,
+  rgba(4,8,16,.96),
+  rgba(4,8,16,.25),
+  rgba(4,8,16,.15));
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  max-width:430px;
+
+  padding:40px 28px 70px;
+}
+
+.eyebrow{
+  color:#D6C08A;
+  letter-spacing:3px;
+  font-size:11px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:72px;
+  line-height:.9;
+  margin-bottom:10px;
+}
+
+.tagline{
+  font-size:18px;
+  color:#E2E8F0;
+  margin-bottom:28px;
+}
+
+.cta{
+  display:inline-block;
+
+  padding:14px 22px;
+
+  border-radius:40px;
+
+  background:#C8A95B;
+  color:#08111F;
+
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ---------- GENERAL ---------- */
+
+section,
+footer{
+  width:100%;
+  max-width:430px;
+  margin:auto;
+  padding:70px 22px;
+}
+
+.section-label{
+  color:#D6C08A;
+  font-size:11px;
+  letter-spacing:3px;
+  margin-bottom:18px;
+}
+
+/* ---------- MANIFESTO ---------- */
+
+.manifesto{
+  text-align:center;
+}
+
+.mono{
+  width:82px;
+  margin-bottom:24px;
+}
+
+blockquote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+  line-height:1.25;
+  color:#F5F1E8;
+}
+
+/* ---------- SERVICES ---------- */
+
+.service-grid{
+  display:grid;
+  gap:16px;
+}
+
+.card{
+  padding:22px;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(16px);
+
+  transition:.25s ease;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#C8A95B;
+}
+
+.card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  margin-bottom:6px;
+}
+
+.card p{
+  color:#CBD5E1;
+  font-size:14px;
+}
+
+/* ---------- GALLERY ---------- */
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:16px;
+}
+
+.placeholder{
+  aspect-ratio:4/5;
+
+  border-radius:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#64748B;
+  letter-spacing:2px;
+  font-size:12px;
+
+  border:1px dashed #334155;
+}
+
+/* ---------- CONTACT ---------- */
+
+.contact-btn{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-decoration:none;
+
+  padding:18px;
+  margin:12px 0;
+
+  border-radius:18px;
+
+  font-weight:600;
+}
+
+.whatsapp{
+  background:#25D366;
+  color:white;
+}
+
+.email{
+  background:#111827;
+  color:white;
+}
+
+.instagram{
+  background:linear-gradient(135deg,#833AB4,#E1306C,#F77737);
+  color:white;
+}
+
+.footer-note{
+  margin-top:34px;
+  text-align:center;
+  color:#94A3B8;
+  font-size:13px;
+}
+
+/* ---------- REVEAL ---------- */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:all .8s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:420px){
+
+.hero h1{
+  font-size:60px;
+}
+
+blockquote{
+  font-size:28px;
+}
+
+.nav-links{
+  display:none;
+}
+
+}
